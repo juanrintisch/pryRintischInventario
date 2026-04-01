@@ -43,6 +43,9 @@
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.grpTodo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +54,9 @@
             this.grpTodo.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.grpTodo.BackgroundImage = global::pryRintischInventario.Properties.Resources.inside_view_of_an_empty_cardboard_box_free_photo;
             this.grpTodo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.grpTodo.Controls.Add(this.btnEliminar);
+            this.grpTodo.Controls.Add(this.btnModificar);
+            this.grpTodo.Controls.Add(this.btnAgregar);
             this.grpTodo.Controls.Add(this.maskedTextBox3);
             this.grpTodo.Controls.Add(this.maskedTextBox2);
             this.grpTodo.Controls.Add(this.maskedTextBox1);
@@ -65,9 +71,9 @@
             this.grpTodo.Controls.Add(this.lblCodigo);
             this.grpTodo.Controls.Add(this.lblNombres);
             this.grpTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpTodo.Location = new System.Drawing.Point(142, 76);
+            this.grpTodo.Location = new System.Drawing.Point(134, 76);
             this.grpTodo.Name = "grpTodo";
-            this.grpTodo.Size = new System.Drawing.Size(452, 370);
+            this.grpTodo.Size = new System.Drawing.Size(486, 391);
             this.grpTodo.TabIndex = 0;
             this.grpTodo.TabStop = false;
             this.grpTodo.Enter += new System.EventHandler(this.GrpTodo_Enter);
@@ -193,6 +199,37 @@
             this.maskedTextBox3.TabIndex = 15;
             this.maskedTextBox3.ValidatingType = typeof(int);
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Green;
+            this.btnAgregar.Location = new System.Drawing.Point(42, 319);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(100, 39);
+            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.Yellow;
+            this.btnModificar.Location = new System.Drawing.Point(196, 318);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(111, 40);
+            this.btnModificar.TabIndex = 17;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnEliminar.Location = new System.Drawing.Point(347, 319);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(94, 39);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +264,9 @@
         private System.Windows.Forms.Label lblSignoPesos;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 
