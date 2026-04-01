@@ -40,9 +40,9 @@
             this.lblNombres = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.lblSignoPesos = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.mskCantidad = new System.Windows.Forms.MaskedTextBox();
+            this.mskPrecio = new System.Windows.Forms.MaskedTextBox();
+            this.mskCodigo = new System.Windows.Forms.MaskedTextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -57,9 +57,9 @@
             this.grpTodo.Controls.Add(this.btnEliminar);
             this.grpTodo.Controls.Add(this.btnModificar);
             this.grpTodo.Controls.Add(this.btnAgregar);
-            this.grpTodo.Controls.Add(this.maskedTextBox3);
-            this.grpTodo.Controls.Add(this.maskedTextBox2);
-            this.grpTodo.Controls.Add(this.maskedTextBox1);
+            this.grpTodo.Controls.Add(this.mskCodigo);
+            this.grpTodo.Controls.Add(this.mskPrecio);
+            this.grpTodo.Controls.Add(this.mskCantidad);
             this.grpTodo.Controls.Add(this.lblSignoPesos);
             this.grpTodo.Controls.Add(this.cmbCategoria);
             this.grpTodo.Controls.Add(this.txtNombre);
@@ -80,24 +80,25 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(196, 59);
+            this.txtNombre.Location = new System.Drawing.Point(217, 59);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(173, 22);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(196, 101);
+            this.txtDescripcion.Location = new System.Drawing.Point(217, 104);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(173, 70);
-            this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.Size = new System.Drawing.Size(245, 62);
+            this.txtDescripcion.TabIndex = 2;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.BackColor = System.Drawing.Color.Tan;
-            this.lblCategoria.Location = new System.Drawing.Point(16, 267);
+            this.lblCategoria.Location = new System.Drawing.Point(6, 267);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(169, 16);
             this.lblCategoria.TabIndex = 5;
@@ -107,7 +108,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.BackColor = System.Drawing.Color.Tan;
-            this.lblStock.Location = new System.Drawing.Point(16, 223);
+            this.lblStock.Location = new System.Drawing.Point(6, 223);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(148, 16);
             this.lblStock.TabIndex = 4;
@@ -117,7 +118,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.Tan;
-            this.lblPrecio.Location = new System.Drawing.Point(16, 179);
+            this.lblPrecio.Location = new System.Drawing.Point(6, 179);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(146, 16);
             this.lblPrecio.TabIndex = 3;
@@ -156,48 +157,56 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(196, 264);
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "Alimento",
+            "Hogar",
+            "Tecnologia",
+            "Exterior",
+            "Decoracion",
+            " "});
+            this.cmbCategoria.Location = new System.Drawing.Point(217, 264);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(121, 24);
-            this.cmbCategoria.TabIndex = 11;
+            this.cmbCategoria.TabIndex = 5;
             // 
             // lblSignoPesos
             // 
             this.lblSignoPesos.AutoSize = true;
             this.lblSignoPesos.BackColor = System.Drawing.Color.Tan;
             this.lblSignoPesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignoPesos.Location = new System.Drawing.Point(281, 179);
+            this.lblSignoPesos.Location = new System.Drawing.Point(192, 178);
             this.lblSignoPesos.Name = "lblSignoPesos";
             this.lblSignoPesos.Size = new System.Drawing.Size(19, 20);
             this.lblSignoPesos.TabIndex = 12;
             this.lblSignoPesos.Text = "$";
             // 
-            // maskedTextBox1
+            // mskCantidad
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(196, 223);
-            this.maskedTextBox1.Mask = "99999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(79, 22);
-            this.maskedTextBox1.TabIndex = 13;
-            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.mskCantidad.Location = new System.Drawing.Point(217, 220);
+            this.mskCantidad.Mask = "99999";
+            this.mskCantidad.Name = "mskCantidad";
+            this.mskCantidad.Size = new System.Drawing.Size(79, 22);
+            this.mskCantidad.TabIndex = 4;
+            this.mskCantidad.ValidatingType = typeof(int);
             // 
-            // maskedTextBox2
+            // mskPrecio
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(196, 179);
-            this.maskedTextBox2.Mask = "99999";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(79, 22);
-            this.maskedTextBox2.TabIndex = 14;
-            this.maskedTextBox2.ValidatingType = typeof(int);
+            this.mskPrecio.Location = new System.Drawing.Point(217, 178);
+            this.mskPrecio.Mask = "99999";
+            this.mskPrecio.Name = "mskPrecio";
+            this.mskPrecio.Size = new System.Drawing.Size(79, 22);
+            this.mskPrecio.TabIndex = 3;
+            this.mskPrecio.ValidatingType = typeof(int);
             // 
-            // maskedTextBox3
+            // mskCodigo
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(196, 15);
-            this.maskedTextBox3.Mask = "99999";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(79, 22);
-            this.maskedTextBox3.TabIndex = 15;
-            this.maskedTextBox3.ValidatingType = typeof(int);
+            this.mskCodigo.Location = new System.Drawing.Point(217, 15);
+            this.mskCodigo.Mask = "99999";
+            this.mskCodigo.Name = "mskCodigo";
+            this.mskCodigo.Size = new System.Drawing.Size(79, 22);
+            this.mskCodigo.TabIndex = 0;
+            this.mskCodigo.ValidatingType = typeof(int);
+            this.mskCodigo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCodigo_MaskInputRejected);
             // 
             // btnAgregar
             // 
@@ -205,7 +214,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(42, 319);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 39);
-            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
@@ -215,7 +224,7 @@
             this.btnModificar.Location = new System.Drawing.Point(196, 318);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(111, 40);
-            this.btnModificar.TabIndex = 17;
+            this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.button2_Click);
@@ -226,7 +235,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(347, 319);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 39);
-            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
@@ -259,11 +268,11 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblStock;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mskPrecio;
+        private System.Windows.Forms.MaskedTextBox mskCantidad;
         private System.Windows.Forms.Label lblSignoPesos;
         private System.Windows.Forms.ComboBox cmbCategoria;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox mskCodigo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;

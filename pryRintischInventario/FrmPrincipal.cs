@@ -26,5 +26,15 @@ namespace pryRintischInventario
         {
 
         }
+
+        private void mskCodigo_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            txtNombre.Enabled = true;
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
