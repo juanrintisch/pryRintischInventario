@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.grpTodo = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.mskCodigo = new System.Windows.Forms.MaskedTextBox();
+            this.mskPrecio = new System.Windows.Forms.MaskedTextBox();
+            this.mskCantidad = new System.Windows.Forms.MaskedTextBox();
+            this.lblSignoPesos = new System.Windows.Forms.Label();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -38,14 +46,6 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNombres = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.lblSignoPesos = new System.Windows.Forms.Label();
-            this.mskCantidad = new System.Windows.Forms.MaskedTextBox();
-            this.mskPrecio = new System.Windows.Forms.MaskedTextBox();
-            this.mskCodigo = new System.Windows.Forms.MaskedTextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.grpTodo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,145 +78,15 @@
             this.grpTodo.TabStop = false;
             this.grpTodo.Enter += new System.EventHandler(this.GrpTodo_Enter);
             // 
-            // txtNombre
+            // btnEliminar
             // 
-            this.txtNombre.Location = new System.Drawing.Point(217, 59);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(173, 22);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(217, 104);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(245, 62);
-            this.txtDescripcion.TabIndex = 2;
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.BackColor = System.Drawing.Color.Tan;
-            this.lblCategoria.Location = new System.Drawing.Point(6, 267);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(169, 16);
-            this.lblCategoria.TabIndex = 5;
-            this.lblCategoria.Text = "Categoria Del Producto";
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.BackColor = System.Drawing.Color.Tan;
-            this.lblStock.Location = new System.Drawing.Point(6, 223);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(148, 16);
-            this.lblStock.TabIndex = 4;
-            this.lblStock.Text = "Cantidad Disponible";
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.BackColor = System.Drawing.Color.Tan;
-            this.lblPrecio.Location = new System.Drawing.Point(6, 179);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(146, 16);
-            this.lblPrecio.TabIndex = 3;
-            this.lblPrecio.Text = "Precio Del Producto";
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.BackColor = System.Drawing.Color.Tan;
-            this.lblDescripcion.Location = new System.Drawing.Point(6, 107);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(184, 16);
-            this.lblDescripcion.TabIndex = 2;
-            this.lblDescripcion.Text = "Descripcion Del Producto";
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.BackColor = System.Drawing.Color.Tan;
-            this.lblCodigo.Location = new System.Drawing.Point(6, 18);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(151, 16);
-            this.lblCodigo.TabIndex = 1;
-            this.lblCodigo.Text = "Codigo Del Producto";
-            // 
-            // lblNombres
-            // 
-            this.lblNombres.AutoSize = true;
-            this.lblNombres.BackColor = System.Drawing.Color.Tan;
-            this.lblNombres.Location = new System.Drawing.Point(6, 62);
-            this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(156, 16);
-            this.lblNombres.TabIndex = 0;
-            this.lblNombres.Text = "Nombre Del Producto";
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Items.AddRange(new object[] {
-            "Alimento",
-            "Hogar",
-            "Tecnologia",
-            "Exterior",
-            "Decoracion",
-            " "});
-            this.cmbCategoria.Location = new System.Drawing.Point(217, 264);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(121, 24);
-            this.cmbCategoria.TabIndex = 5;
-            // 
-            // lblSignoPesos
-            // 
-            this.lblSignoPesos.AutoSize = true;
-            this.lblSignoPesos.BackColor = System.Drawing.Color.Tan;
-            this.lblSignoPesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignoPesos.Location = new System.Drawing.Point(192, 178);
-            this.lblSignoPesos.Name = "lblSignoPesos";
-            this.lblSignoPesos.Size = new System.Drawing.Size(19, 20);
-            this.lblSignoPesos.TabIndex = 12;
-            this.lblSignoPesos.Text = "$";
-            // 
-            // mskCantidad
-            // 
-            this.mskCantidad.Location = new System.Drawing.Point(217, 220);
-            this.mskCantidad.Mask = "99999";
-            this.mskCantidad.Name = "mskCantidad";
-            this.mskCantidad.Size = new System.Drawing.Size(79, 22);
-            this.mskCantidad.TabIndex = 4;
-            this.mskCantidad.ValidatingType = typeof(int);
-            // 
-            // mskPrecio
-            // 
-            this.mskPrecio.Location = new System.Drawing.Point(217, 178);
-            this.mskPrecio.Mask = "99999";
-            this.mskPrecio.Name = "mskPrecio";
-            this.mskPrecio.Size = new System.Drawing.Size(79, 22);
-            this.mskPrecio.TabIndex = 3;
-            this.mskPrecio.ValidatingType = typeof(int);
-            // 
-            // mskCodigo
-            // 
-            this.mskCodigo.Location = new System.Drawing.Point(217, 15);
-            this.mskCodigo.Mask = "99999";
-            this.mskCodigo.Name = "mskCodigo";
-            this.mskCodigo.Size = new System.Drawing.Size(79, 22);
-            this.mskCodigo.TabIndex = 0;
-            this.mskCodigo.ValidatingType = typeof(int);
-            this.mskCodigo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCodigo_MaskInputRejected);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.Green;
-            this.btnAgregar.Location = new System.Drawing.Point(42, 319);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 39);
-            this.btnAgregar.TabIndex = 6;
-            this.btnAgregar.Text = "AGREGAR";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnEliminar.Location = new System.Drawing.Point(347, 319);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(94, 39);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnModificar
             // 
@@ -229,15 +99,145 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnEliminar
+            // btnAgregar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnEliminar.Location = new System.Drawing.Point(347, 319);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(94, 39);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnAgregar.BackColor = System.Drawing.Color.Green;
+            this.btnAgregar.Location = new System.Drawing.Point(42, 319);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(100, 39);
+            this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
+            // mskCodigo
+            // 
+            this.mskCodigo.Location = new System.Drawing.Point(217, 18);
+            this.mskCodigo.Mask = "99999";
+            this.mskCodigo.Name = "mskCodigo";
+            this.mskCodigo.Size = new System.Drawing.Size(79, 22);
+            this.mskCodigo.TabIndex = 0;
+            this.mskCodigo.ValidatingType = typeof(int);
+            this.mskCodigo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCodigo_MaskInputRejected);
+            // 
+            // mskPrecio
+            // 
+            this.mskPrecio.Location = new System.Drawing.Point(217, 178);
+            this.mskPrecio.Mask = "99999";
+            this.mskPrecio.Name = "mskPrecio";
+            this.mskPrecio.Size = new System.Drawing.Size(79, 22);
+            this.mskPrecio.TabIndex = 3;
+            this.mskPrecio.ValidatingType = typeof(int);
+            // 
+            // mskCantidad
+            // 
+            this.mskCantidad.Location = new System.Drawing.Point(217, 219);
+            this.mskCantidad.Mask = "99999";
+            this.mskCantidad.Name = "mskCantidad";
+            this.mskCantidad.Size = new System.Drawing.Size(79, 22);
+            this.mskCantidad.TabIndex = 4;
+            this.mskCantidad.ValidatingType = typeof(int);
+            // 
+            // lblSignoPesos
+            // 
+            this.lblSignoPesos.AutoSize = true;
+            this.lblSignoPesos.BackColor = System.Drawing.Color.Tan;
+            this.lblSignoPesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignoPesos.Location = new System.Drawing.Point(217, 178);
+            this.lblSignoPesos.Name = "lblSignoPesos";
+            this.lblSignoPesos.Size = new System.Drawing.Size(19, 20);
+            this.lblSignoPesos.TabIndex = 12;
+            this.lblSignoPesos.Text = "$";
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "Alimento",
+            "Hogar",
+            "Tecnologia",
+            "Exterior",
+            "Decoracion",
+            " "});
+            this.cmbCategoria.Location = new System.Drawing.Point(217, 260);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(121, 24);
+            this.cmbCategoria.TabIndex = 5;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(217, 53);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(173, 22);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(217, 97);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(245, 62);
+            this.txtDescripcion.TabIndex = 2;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.BackColor = System.Drawing.Color.Tan;
+            this.lblCategoria.Location = new System.Drawing.Point(6, 268);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(169, 16);
+            this.lblCategoria.TabIndex = 5;
+            this.lblCategoria.Text = "Categoria Del Producto";
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.BackColor = System.Drawing.Color.Tan;
+            this.lblStock.Location = new System.Drawing.Point(6, 222);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(148, 16);
+            this.lblStock.TabIndex = 4;
+            this.lblStock.Text = "Cantidad Disponible";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.BackColor = System.Drawing.Color.Tan;
+            this.lblPrecio.Location = new System.Drawing.Point(6, 182);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(146, 16);
+            this.lblPrecio.TabIndex = 3;
+            this.lblPrecio.Text = "Precio Del Producto";
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.BackColor = System.Drawing.Color.Tan;
+            this.lblDescripcion.Location = new System.Drawing.Point(6, 100);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(184, 16);
+            this.lblDescripcion.TabIndex = 2;
+            this.lblDescripcion.Text = "Descripciòn Del Producto";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.BackColor = System.Drawing.Color.Tan;
+            this.lblCodigo.Location = new System.Drawing.Point(6, 24);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(151, 16);
+            this.lblCodigo.TabIndex = 1;
+            this.lblCodigo.Text = "Còdigo Del Producto";
+            // 
+            // lblNombres
+            // 
+            this.lblNombres.AutoSize = true;
+            this.lblNombres.BackColor = System.Drawing.Color.Tan;
+            this.lblNombres.Location = new System.Drawing.Point(6, 56);
+            this.lblNombres.Name = "lblNombres";
+            this.lblNombres.Size = new System.Drawing.Size(156, 16);
+            this.lblNombres.TabIndex = 0;
+            this.lblNombres.Text = "Nombre Del Producto";
             // 
             // FrmPrincipal
             // 
@@ -245,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pryRintischInventario.Properties.Resources.como_poner_en_marcha_un_pequeno_almacen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(733, 537);
+            this.ClientSize = new System.Drawing.Size(714, 563);
             this.Controls.Add(this.grpTodo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
