@@ -12,6 +12,13 @@ namespace pryRintischInventario
 {
     public partial class FrmPrincipal : Form
     {
+        // Variables Globales
+        int varCodigo = 0;
+        string varNombre = "";
+        string varDescripcion = "";
+        int varPrecio = 0;
+        int varCantidad = 0;
+        string varCategoria = "";
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -29,10 +36,46 @@ namespace pryRintischInventario
 
         private void mskCodigo_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            txtNombre.Enabled = true;
+            
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            lblRegistroFinal.Text= mskCodigo.Text 
+                + '/' + txtNombre.Text 
+                + '/' + txtDescripcion.Text 
+                + '/' + mskPrecio.Text 
+                + '/' + mskCantidad.Text
+                + '/' + cmbCategoria.Text;
+
+            varCodigo = Convert.ToInt16(mskCodigo.Text);
+            varNombre = txtNombre.Text;
+            varDescripcion = txtDescripcion.Text;
+            varPrecio = Convert.ToInt16(mskPrecio.Text);
+            varCantidad = int.Parse(mskCantidad.Text);
+            varCategoria = cmbCategoria.Text;
+
+            lblVariables.Text = varCodigo.ToString() 
+                + " " + varNombre 
+                + " " + varDescripcion 
+                + " " + varPrecio.ToString() 
+                + " " + varCantidad.ToString() 
+                + " " + varCategoria;
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRegistroFinal_Click(object sender, EventArgs e)
         {
 
         }

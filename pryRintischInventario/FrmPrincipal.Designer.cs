@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.grpTodo = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.mskCodigo = new System.Windows.Forms.MaskedTextBox();
             this.mskPrecio = new System.Windows.Forms.MaskedTextBox();
@@ -46,16 +45,19 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNombres = new System.Windows.Forms.Label();
+            this.lblRegistroFinal = new System.Windows.Forms.Label();
+            this.lblVariables = new System.Windows.Forms.Label();
             this.grpTodo.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpTodo
             // 
-            this.grpTodo.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.grpTodo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpTodo.BackgroundImage = global::pryRintischInventario.Properties.Resources.inside_view_of_an_empty_cardboard_box_free_photo;
             this.grpTodo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.grpTodo.Controls.Add(this.lblVariables);
+            this.grpTodo.Controls.Add(this.lblRegistroFinal);
             this.grpTodo.Controls.Add(this.btnEliminar);
-            this.grpTodo.Controls.Add(this.btnModificar);
             this.grpTodo.Controls.Add(this.btnAgregar);
             this.grpTodo.Controls.Add(this.mskCodigo);
             this.grpTodo.Controls.Add(this.mskPrecio);
@@ -71,9 +73,9 @@
             this.grpTodo.Controls.Add(this.lblCodigo);
             this.grpTodo.Controls.Add(this.lblNombres);
             this.grpTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpTodo.Location = new System.Drawing.Point(134, 76);
+            this.grpTodo.Location = new System.Drawing.Point(134, 75);
             this.grpTodo.Name = "grpTodo";
-            this.grpTodo.Size = new System.Drawing.Size(486, 391);
+            this.grpTodo.Size = new System.Drawing.Size(486, 447);
             this.grpTodo.TabIndex = 0;
             this.grpTodo.TabStop = false;
             this.grpTodo.Enter += new System.EventHandler(this.GrpTodo_Enter);
@@ -81,47 +83,37 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnEliminar.Location = new System.Drawing.Point(347, 319);
+            this.btnEliminar.Location = new System.Drawing.Point(296, 319);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 39);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.Yellow;
-            this.btnModificar.Location = new System.Drawing.Point(196, 318);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(111, 40);
-            this.btnModificar.TabIndex = 7;
-            this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.button2_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Green;
-            this.btnAgregar.Location = new System.Drawing.Point(42, 319);
+            this.btnAgregar.Location = new System.Drawing.Point(90, 319);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 39);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // mskCodigo
             // 
             this.mskCodigo.Location = new System.Drawing.Point(217, 18);
-            this.mskCodigo.Mask = "99999";
+            this.mskCodigo.Mask = "0-000000-000000";
             this.mskCodigo.Name = "mskCodigo";
-            this.mskCodigo.Size = new System.Drawing.Size(79, 22);
+            this.mskCodigo.Size = new System.Drawing.Size(121, 22);
             this.mskCodigo.TabIndex = 0;
-            this.mskCodigo.ValidatingType = typeof(int);
             this.mskCodigo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCodigo_MaskInputRejected);
             // 
             // mskPrecio
             // 
-            this.mskPrecio.Location = new System.Drawing.Point(217, 178);
+            this.mskPrecio.Location = new System.Drawing.Point(238, 178);
             this.mskPrecio.Mask = "99999";
             this.mskPrecio.Name = "mskPrecio";
             this.mskPrecio.Size = new System.Drawing.Size(79, 22);
@@ -142,7 +134,7 @@
             this.lblSignoPesos.AutoSize = true;
             this.lblSignoPesos.BackColor = System.Drawing.Color.Tan;
             this.lblSignoPesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignoPesos.Location = new System.Drawing.Point(217, 178);
+            this.lblSignoPesos.Location = new System.Drawing.Point(213, 180);
             this.lblSignoPesos.Name = "lblSignoPesos";
             this.lblSignoPesos.Size = new System.Drawing.Size(19, 20);
             this.lblSignoPesos.TabIndex = 12;
@@ -150,6 +142,7 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Items.AddRange(new object[] {
             "Alimento",
@@ -239,6 +232,26 @@
             this.lblNombres.TabIndex = 0;
             this.lblNombres.Text = "Nombre Del Producto";
             // 
+            // lblRegistroFinal
+            // 
+            this.lblRegistroFinal.AutoSize = true;
+            this.lblRegistroFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistroFinal.Location = new System.Drawing.Point(6, 386);
+            this.lblRegistroFinal.Name = "lblRegistroFinal";
+            this.lblRegistroFinal.Size = new System.Drawing.Size(14, 18);
+            this.lblRegistroFinal.TabIndex = 1;
+            this.lblRegistroFinal.Text = "-";
+            this.lblRegistroFinal.Click += new System.EventHandler(this.lblRegistroFinal_Click);
+            // 
+            // lblVariables
+            // 
+            this.lblVariables.AutoSize = true;
+            this.lblVariables.Location = new System.Drawing.Point(6, 417);
+            this.lblVariables.Name = "lblVariables";
+            this.lblVariables.Size = new System.Drawing.Size(50, 16);
+            this.lblVariables.TabIndex = 13;
+            this.lblVariables.Text = "label1";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,8 +287,9 @@
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.MaskedTextBox mskCodigo;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label lblRegistroFinal;
+        private System.Windows.Forms.Label lblVariables;
     }
 }
 
