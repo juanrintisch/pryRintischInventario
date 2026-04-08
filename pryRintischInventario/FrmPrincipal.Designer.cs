@@ -73,7 +73,7 @@
             this.grpTodo.Controls.Add(this.lblCodigo);
             this.grpTodo.Controls.Add(this.lblNombres);
             this.grpTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpTodo.Location = new System.Drawing.Point(134, 75);
+            this.grpTodo.Location = new System.Drawing.Point(108, 70);
             this.grpTodo.Name = "grpTodo";
             this.grpTodo.Size = new System.Drawing.Size(486, 447);
             this.grpTodo.TabIndex = 0;
@@ -260,7 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pryRintischInventario.Properties.Resources.como_poner_en_marcha_un_pequeno_almacen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(714, 563);
+            this.ClientSize = new System.Drawing.Size(705, 563);
             this.Controls.Add(this.grpTodo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";

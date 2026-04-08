@@ -46,6 +46,22 @@ namespace pryRintischInventario
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
+                                  
+            if (mskCodigo.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "" || mskPrecio.Text == "" || mskCantidad.Text == "" || cmbCategoria.SelectedIndex == -1)
+            {
+              mskCodigo.Focus();
+              txtNombre.Focus();
+              txtDescripcion.Focus();
+              mskPrecio.Focus();
+              mskCantidad.Focus();
+              cmbCategoria.Focus();
+
+              MessageBox.Show("Por favor, complete todos los campos.");
+              return;
+                
+            }
+
             lblRegistroFinal.Text= mskCodigo.Text 
                 + '/' + txtNombre.Text 
                 + '/' + txtDescripcion.Text 
@@ -67,13 +83,21 @@ namespace pryRintischInventario
                 + "/" + varCantidad.ToString() 
                 + "/" + varCategoria;
 
+            mskCodigo.Clear();
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+            mskPrecio.Clear();
+            mskCantidad.Clear();
+            cmbCategoria.SelectedIndex = -1;
 
+            MessageBox.Show("Producto Agregado");
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            lblRegistroFinal.Text = "";
+            lblVariables.Text = "";
         }
 
         private void lblRegistroFinal_Click(object sender, EventArgs e)
