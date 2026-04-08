@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.grpTodo = new System.Windows.Forms.GroupBox();
+            this.lblVariables = new System.Windows.Forms.Label();
+            this.lblRegistroFinal = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.mskCodigo = new System.Windows.Forms.MaskedTextBox();
@@ -45,8 +47,6 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNombres = new System.Windows.Forms.Label();
-            this.lblRegistroFinal = new System.Windows.Forms.Label();
-            this.lblVariables = new System.Windows.Forms.Label();
             this.grpTodo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,27 @@
             this.grpTodo.TabStop = false;
             this.grpTodo.Enter += new System.EventHandler(this.GrpTodo_Enter);
             // 
+            // lblVariables
+            // 
+            this.lblVariables.AutoSize = true;
+            this.lblVariables.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVariables.Location = new System.Drawing.Point(6, 417);
+            this.lblVariables.Name = "lblVariables";
+            this.lblVariables.Size = new System.Drawing.Size(14, 18);
+            this.lblVariables.TabIndex = 13;
+            this.lblVariables.Text = "-";
+            // 
+            // lblRegistroFinal
+            // 
+            this.lblRegistroFinal.AutoSize = true;
+            this.lblRegistroFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistroFinal.Location = new System.Drawing.Point(6, 386);
+            this.lblRegistroFinal.Name = "lblRegistroFinal";
+            this.lblRegistroFinal.Size = new System.Drawing.Size(14, 18);
+            this.lblRegistroFinal.TabIndex = 1;
+            this.lblRegistroFinal.Text = "-";
+            this.lblRegistroFinal.Click += new System.EventHandler(this.lblRegistroFinal_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -105,10 +126,11 @@
             // mskCodigo
             // 
             this.mskCodigo.Location = new System.Drawing.Point(217, 18);
-            this.mskCodigo.Mask = "0-000000-000000";
+            this.mskCodigo.Mask = "99999999";
             this.mskCodigo.Name = "mskCodigo";
             this.mskCodigo.Size = new System.Drawing.Size(121, 22);
             this.mskCodigo.TabIndex = 0;
+            this.mskCodigo.ValidatingType = typeof(int);
             this.mskCodigo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCodigo_MaskInputRejected);
             // 
             // mskPrecio
@@ -210,7 +232,7 @@
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(184, 16);
             this.lblDescripcion.TabIndex = 2;
-            this.lblDescripcion.Text = "Descripciòn Del Producto";
+            this.lblDescripcion.Text = "Descripción Del Producto";
             // 
             // lblCodigo
             // 
@@ -220,7 +242,7 @@
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(151, 16);
             this.lblCodigo.TabIndex = 1;
-            this.lblCodigo.Text = "Còdigo Del Producto";
+            this.lblCodigo.Text = "Código Del Producto";
             // 
             // lblNombres
             // 
@@ -231,26 +253,6 @@
             this.lblNombres.Size = new System.Drawing.Size(156, 16);
             this.lblNombres.TabIndex = 0;
             this.lblNombres.Text = "Nombre Del Producto";
-            // 
-            // lblRegistroFinal
-            // 
-            this.lblRegistroFinal.AutoSize = true;
-            this.lblRegistroFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistroFinal.Location = new System.Drawing.Point(6, 386);
-            this.lblRegistroFinal.Name = "lblRegistroFinal";
-            this.lblRegistroFinal.Size = new System.Drawing.Size(14, 18);
-            this.lblRegistroFinal.TabIndex = 1;
-            this.lblRegistroFinal.Text = "-";
-            this.lblRegistroFinal.Click += new System.EventHandler(this.lblRegistroFinal_Click);
-            // 
-            // lblVariables
-            // 
-            this.lblVariables.AutoSize = true;
-            this.lblVariables.Location = new System.Drawing.Point(6, 417);
-            this.lblVariables.Name = "lblVariables";
-            this.lblVariables.Size = new System.Drawing.Size(50, 16);
-            this.lblVariables.TabIndex = 13;
-            this.lblVariables.Text = "label1";
             // 
             // FrmPrincipal
             // 
@@ -264,6 +266,7 @@
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.grpTodo.ResumeLayout(false);
             this.grpTodo.PerformLayout();
             this.ResumeLayout(false);

@@ -53,19 +53,20 @@ namespace pryRintischInventario
                 + '/' + mskCantidad.Text
                 + '/' + cmbCategoria.Text;
 
-            varCodigo = Convert.ToInt16(mskCodigo.Text);
+            varCodigo =int.Parse(mskCodigo.Text);
             varNombre = txtNombre.Text;
             varDescripcion = txtDescripcion.Text;
-            varPrecio = Convert.ToInt16(mskPrecio.Text);
+            varPrecio =int.Parse(mskPrecio.Text);
             varCantidad = int.Parse(mskCantidad.Text);
             varCategoria = cmbCategoria.Text;
 
-            lblVariables.Text = varCodigo.ToString() 
-                + " " + varNombre 
-                + " " + varDescripcion 
-                + " " + varPrecio.ToString() 
-                + " " + varCantidad.ToString() 
-                + " " + varCategoria;
+            lblVariables.Text = varCodigo.ToString()
+                + "/" + varNombre 
+                + "/" + varDescripcion 
+                + "/" + varPrecio.ToString() 
+                + "/" + varCantidad.ToString() 
+                + "/" + varCategoria;
+
 
 
         }
@@ -76,6 +77,11 @@ namespace pryRintischInventario
         }
 
         private void lblRegistroFinal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 
         }
