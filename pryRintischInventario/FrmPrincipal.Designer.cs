@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.grpTodo = new System.Windows.Forms.GroupBox();
-            this.lblVariables = new System.Windows.Forms.Label();
-            this.lblRegistroFinal = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.mskCodigo = new System.Windows.Forms.MaskedTextBox();
@@ -47,7 +45,19 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNombres = new System.Windows.Forms.Label();
+            this.grpTabla = new System.Windows.Forms.GroupBox();
+            this.dtaDatos = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnModificarDos = new System.Windows.Forms.Button();
             this.grpTodo.SuspendLayout();
+            this.grpTabla.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // grpTodo
@@ -55,8 +65,6 @@
             this.grpTodo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpTodo.BackgroundImage = global::pryRintischInventario.Properties.Resources.inside_view_of_an_empty_cardboard_box_free_photo;
             this.grpTodo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.grpTodo.Controls.Add(this.lblVariables);
-            this.grpTodo.Controls.Add(this.lblRegistroFinal);
             this.grpTodo.Controls.Add(this.btnEliminar);
             this.grpTodo.Controls.Add(this.btnAgregar);
             this.grpTodo.Controls.Add(this.mskCodigo);
@@ -73,48 +81,30 @@
             this.grpTodo.Controls.Add(this.lblCodigo);
             this.grpTodo.Controls.Add(this.lblNombres);
             this.grpTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpTodo.Location = new System.Drawing.Point(108, 70);
+            this.grpTodo.Location = new System.Drawing.Point(12, 12);
             this.grpTodo.Name = "grpTodo";
-            this.grpTodo.Size = new System.Drawing.Size(486, 447);
+            this.grpTodo.Size = new System.Drawing.Size(486, 374);
             this.grpTodo.TabIndex = 0;
             this.grpTodo.TabStop = false;
             this.grpTodo.Enter += new System.EventHandler(this.GrpTodo_Enter);
             // 
-            // lblVariables
-            // 
-            this.lblVariables.AutoSize = true;
-            this.lblVariables.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVariables.Location = new System.Drawing.Point(6, 417);
-            this.lblVariables.Name = "lblVariables";
-            this.lblVariables.Size = new System.Drawing.Size(14, 18);
-            this.lblVariables.TabIndex = 13;
-            this.lblVariables.Text = "-";
-            // 
-            // lblRegistroFinal
-            // 
-            this.lblRegistroFinal.AutoSize = true;
-            this.lblRegistroFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistroFinal.Location = new System.Drawing.Point(6, 386);
-            this.lblRegistroFinal.Name = "lblRegistroFinal";
-            this.lblRegistroFinal.Size = new System.Drawing.Size(14, 18);
-            this.lblRegistroFinal.TabIndex = 1;
-            this.lblRegistroFinal.Text = "-";
-            this.lblRegistroFinal.Click += new System.EventHandler(this.lblRegistroFinal_Click);
-            // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Location = new System.Drawing.Point(296, 319);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 39);
-            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.Green;
+            this.btnAgregar.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregar.Location = new System.Drawing.Point(90, 319);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 39);
@@ -167,12 +157,13 @@
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Items.AddRange(new object[] {
-            "Alimento",
             "Hogar",
-            "Tecnologia",
-            "Exterior",
+            "Alimentos",
             "Decoracion",
-            " "});
+            "Exterior",
+            "Macotas",
+            "Vehiculo",
+            "Tecnologia"});
             this.cmbCategoria.Location = new System.Drawing.Point(217, 260);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(121, 24);
@@ -254,13 +245,102 @@
             this.lblNombres.TabIndex = 0;
             this.lblNombres.Text = "Nombre Del Producto";
             // 
+            // grpTabla
+            // 
+            this.grpTabla.BackgroundImage = global::pryRintischInventario.Properties.Resources.inside_view_of_an_empty_cardboard_box_free_photo;
+            this.grpTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.grpTabla.Controls.Add(this.btnModificarDos);
+            this.grpTabla.Controls.Add(this.btnModificar);
+            this.grpTabla.Controls.Add(this.dtaDatos);
+            this.grpTabla.Location = new System.Drawing.Point(504, 12);
+            this.grpTabla.Name = "grpTabla";
+            this.grpTabla.Size = new System.Drawing.Size(684, 374);
+            this.grpTabla.TabIndex = 1;
+            this.grpTabla.TabStop = false;
+            // 
+            // dtaDatos
+            // 
+            this.dtaDatos.AllowUserToAddRows = false;
+            this.dtaDatos.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dtaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtaDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombre,
+            this.Descripcion,
+            this.Precio,
+            this.Cantidad,
+            this.Categoria});
+            this.dtaDatos.Location = new System.Drawing.Point(19, 18);
+            this.dtaDatos.Name = "dtaDatos";
+            this.dtaDatos.Size = new System.Drawing.Size(646, 295);
+            this.dtaDatos.TabIndex = 2;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.Moccasin;
+            this.btnModificar.Enabled = false;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(19, 319);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(100, 39);
+            this.btnModificar.TabIndex = 0;
+            this.btnModificar.Text = "MODIFICAR DATOS";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnModificarDos
+            // 
+            this.btnModificarDos.BackColor = System.Drawing.Color.Moccasin;
+            this.btnModificarDos.Enabled = false;
+            this.btnModificarDos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificarDos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarDos.Location = new System.Drawing.Point(125, 319);
+            this.btnModificarDos.Name = "btnModificarDos";
+            this.btnModificarDos.Size = new System.Drawing.Size(100, 39);
+            this.btnModificarDos.TabIndex = 1;
+            this.btnModificarDos.Text = "CONFIRMAR";
+            this.btnModificarDos.UseVisualStyleBackColor = false;
+            this.btnModificarDos.Click += new System.EventHandler(this.btnModificarDos_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pryRintischInventario.Properties.Resources.como_poner_en_marcha_un_pequeno_almacen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(705, 563);
+            this.ClientSize = new System.Drawing.Size(1202, 405);
+            this.Controls.Add(this.grpTabla);
             this.Controls.Add(this.grpTodo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
@@ -269,6 +349,8 @@
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.grpTodo.ResumeLayout(false);
             this.grpTodo.PerformLayout();
+            this.grpTabla.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtaDatos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,8 +373,16 @@
         private System.Windows.Forms.MaskedTextBox mskCodigo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Label lblRegistroFinal;
-        private System.Windows.Forms.Label lblVariables;
+        private System.Windows.Forms.GroupBox grpTabla;
+        private System.Windows.Forms.DataGridView dtaDatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.Button btnModificarDos;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 
