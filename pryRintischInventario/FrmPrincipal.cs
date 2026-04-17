@@ -174,6 +174,8 @@ namespace pryRintischInventario
 
                 mskCodigo.Focus();
 
+                btnModificarDos.Enabled = false;
+
             }
             else
             {
